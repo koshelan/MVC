@@ -34,4 +34,7 @@ public class PostController {
   public void removeById(@PathVariable long id) {
     service.removeById(id);
   }
+
+
+
 }
