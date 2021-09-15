@@ -1,6 +1,7 @@
 package server.model;
 
 public class PostContainer {
+
     private boolean removed;
     private Post post;
 
@@ -17,15 +18,15 @@ public class PostContainer {
         this.removed = false;
     }
 
-    public void setPost(Post post) {
-        this.post = post;
-    }
-
     public boolean isRemoved() {
         return removed;
     }
 
     public Post getPost() {
         return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
     }
 }

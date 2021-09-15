@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
 @Repository
 public class PostRepository {
 
-    private AtomicLong idCounter;
-    private Map<Long, PostContainer> repository;
+    private final AtomicLong idCounter;
+    private final Map<Long, PostContainer> repository;
 
     public PostRepository() {
         repository = new ConcurrentHashMap<>();
@@ -34,7 +34,7 @@ public class PostRepository {
     public Optional<Post> getById(long id) {
 
         return repository.containsKey(id) && !repository.get(id).isRemoved() ? Optional.of(repository.get(id).getPost())
-                                          : Optional.empty();
+                                                                             : Optional.empty();
     }
 
     public Post save(Post post) {
